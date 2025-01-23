@@ -18,6 +18,7 @@ class Categoryseeder extends Seeder
             category::create([
                 'name' => 'Category'.$i,
                 'created_at' => now(),
+                //ghjgjhghjghj
                 'updated_at' => now()
             ]);
         }

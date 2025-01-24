@@ -18,6 +18,9 @@ return new class extends Migration
             $table->decimal('weight', 10, 2);
             $table->decimal('price', 10, 2);
             $table->timestamps();
+
+            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
+            $table->foreign('waste_id')->references('id')->on('wastes')->onDelete('cascade');
         });
     }
 

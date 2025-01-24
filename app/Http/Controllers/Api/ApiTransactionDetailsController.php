@@ -2,23 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\withdrawals;
 use Illuminate\Http\Request;
 
-class WithdrawalsController extends Controller
+class ApiTransactionDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
     {
         //
     }
@@ -34,15 +25,7 @@ class WithdrawalsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(withdrawals $withdrawals)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(withdrawals $withdrawals)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +33,7 @@ class WithdrawalsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, withdrawals $withdrawals)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +41,7 @@ class WithdrawalsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(withdrawals $withdrawals)
+    public function destroy(string $id)
     {
         //
     }

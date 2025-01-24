@@ -2,23 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\transactions;
 use Illuminate\Http\Request;
 
-class TransactionsController extends Controller
+class ApiWithdrawalsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
     {
         //
     }
@@ -34,15 +25,7 @@ class TransactionsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(transactions $transactions)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(transactions $transactions)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +33,7 @@ class TransactionsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, transactions $transactions)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +41,7 @@ class TransactionsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(transactions $transactions)
+    public function destroy(string $id)
     {
         //
     }

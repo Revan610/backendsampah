@@ -13,14 +13,6 @@ class Categoryseeder extends Seeder
     public function run(): void
     {
         //category array
-        $categories = [];
-        for($i=1;$i<=100;$i++){
-            category::create([
-                'name' => 'Category'.$i,
-                'created_at' => now(),
-                //ghjgjhghjghj
-                'updated_at' => now()
-            ]);
-        }
+        
     }
 }

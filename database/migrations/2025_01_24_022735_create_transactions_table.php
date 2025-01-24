@@ -18,6 +18,8 @@ return new class extends Migration
             $table->decimal('total_price', 10, 2);
             $table->timestamp('transaction_date')->useCurrent(); 
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

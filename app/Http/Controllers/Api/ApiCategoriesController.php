@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class ApiCategoriesController extends Controller
@@ -19,7 +21,15 @@ class ApiCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /**
+         * $categories = [
+         * ['name'=>'Organik'],
+         * ['name'=>'Kertas'],
+         * ['name'=>'Plastik']
+         * ];
+         * category::insert($categories);
+         * return response() -> json(['massage' => 'Categories added successfully / Kategori udah nambah']);
+        **/
     }
 
     /**

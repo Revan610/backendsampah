@@ -51,8 +51,16 @@ class AuthController extends Controller
         ]);
     }
 
-    public function destroy(string $id)
+    public function logout(Request $request)
     {
-
+        if ($request->user()) {
+            $request->user()->tokens()->delete();
+            return response()->json([
+                'message' => 'LOGOUT BERHASIL',
+            ]);
+        }
+        return response()->json([
+            'message' => 'TIDAK ADA AKUN YANG TERAUTENTIFIKASI',
+        ], 401);
     }
 }

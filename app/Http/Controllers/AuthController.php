@@ -35,14 +35,20 @@ class AuthController extends Controller
         ]);
     }
 
-    public function show(string $id)
+    public function login(Request $request)
     {
+        if (!Auth::attempt($request->only('email', 'password'))) {
+            return response()->json(['message'=>'AKUN TIDAK DITEMUKAN'], 401);
+        }
 
-    }
-
-    public function update(Request $request, string $id)
-    {
-
+        $user = User::where('email', $request->email)->firstOrFail();
+        $token = $user->createToken('auth_token')->plainTextToken;
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'user' => $user,
+            'message' => 'LOGIN BERHASIL'
+        ]);
     }
 
     public function destroy(string $id)

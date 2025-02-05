@@ -27,10 +27,6 @@ class ApiCategoriesController extends Controller
     public function store(Request $request)
     {
         //create limit 3 categories
-        $category = new category();
-        $category->name = $request->name;
-        $category->description = $request->description;
-        $category->save();
         if (category::count()>=3){
             return response()->json([
                 'status' => 'failed',
@@ -38,6 +34,10 @@ class ApiCategoriesController extends Controller
             ]);
         }
         else{
+            $category = new category();
+            $category->name = $request->name;
+            $category->description = $request->description;
+            $category->save();
             return response()->json([
                 'status' => 'success',
                 'massage' => 'Category created',

@@ -67,6 +67,10 @@ class ApiCategoriesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = category::destroy($id);
+        if(!$category){
+            return response()->json(['message' => 'Category Was Failed To Deleted']);
+        }
+        return response()->json(['message' => 'Category Was Successfuly Deleted']);
     }
 }

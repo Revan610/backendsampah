@@ -26,7 +26,7 @@ class ApiCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        abort(404);
     }
 
     /**

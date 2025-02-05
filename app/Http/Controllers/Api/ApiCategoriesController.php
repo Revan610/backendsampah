@@ -36,7 +36,8 @@ class ApiCategoriesController extends Controller
                 'status' => 'failed',
                 'massage' => 'Limit is 3 categories'
             ]);
-        }else{
+        }
+        else{
             return response()->json([
                 'status' => 'success',
                 'massage' => 'Category created',

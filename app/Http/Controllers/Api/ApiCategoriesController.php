@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\category;
 
 class ApiCategoriesController extends Controller
 {
@@ -11,7 +13,12 @@ class ApiCategoriesController extends Controller
      */
     public function index()
     {
-        //
+        //Data Categories
+        $categories=category::all();
+        return response()->json([
+            'status' => 'success',
+            'data' => $categories
+        ]);
     }
 
     /**

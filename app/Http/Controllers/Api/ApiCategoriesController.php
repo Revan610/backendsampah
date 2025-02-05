@@ -51,7 +51,21 @@ class ApiCategoriesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //show an id
+       $category = Category::find($id);
+
+       //error
+        if (!$category) {
+            return response()->json([
+                'message' => 'Category not found'
+            ], 404);
+        }
+
+        //success
+        return response()->json([
+            'message' => 'Category found',
+            'data' => $category
+        ], 200);
     }
 
     /**

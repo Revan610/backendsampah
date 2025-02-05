@@ -19,7 +19,12 @@ class ApiWastesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validasi Data
+        // $validated = $request->validate([
+        //     'category_id'=>'required|exists:categories,id',
+        //     'name'=>'required|string|max:100',
+        //     'name'=>'required|string|max:100',
+        // ]);
     }
 
     /**

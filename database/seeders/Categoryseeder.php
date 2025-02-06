@@ -15,9 +15,9 @@ class Categoryseeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-            ['name' => 'Organik', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['name' => 'Kertas', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['name' => 'Plastik', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['name' => 'Organik', 'price_per_kg' => 5, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['name' => 'Kertas', 'price_per_kg' => 10, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['name' => 'Plastik', 'price_per_kg' => 15, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
         ]);
         
     }

@@ -36,7 +36,7 @@ class ApiCategoriesController extends Controller
         else{
             $category = new category();
             $category->name = $request->name;
-            $category->price_per_kg = $request->price_per_kg;
+            $category->description = $request->description;
             $category->save();
             return response()->json([
                 'status' => 'success',

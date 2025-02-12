@@ -63,4 +63,18 @@ class AuthController extends Controller
             'message' => 'TIDAK ADA AKUN YANG TERAUTENTIFIKASI',
         ], 401);
     }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:250',
+            'password' => 'required|string|min:8',
+        ]);
+
+        $user= User::find($id);
+        $user->name = $request->name;
+        $user->password = $request->password;
+        $user->save();
+        return response()->json(['message' => 'UPDATE BERHASIL DILAKUKAN']);
+    }
 }
